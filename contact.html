@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Finance Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">💰 Finance Club</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="mission.html">Mission</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header page-header-contact">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Contact Information -->
+                <div class="contact-info-card">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon-box">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>financeclub@yourschool.edu</p>
+                            <span class="contact-note">We typically respond within 24 hours</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon-box">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Student Center, Room 200</p>
+                            <span class="contact-note">Your School Name</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon-box">🕐</div>
+                        <div class="contact-details">
+                            <h3>Meeting Times</h3>
+                            <p>Every Wednesday, 4:00 PM</p>
+                            <span class="contact-note">Fall & Spring semesters</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon-box">📞</div>
+                        <div class="contact-details">
+                            <h3>Office Hours</h3>
+                            <p>Mon & Wed 2:00 - 4:00 PM</p>
+                            <span class="contact-note">Room 200, Student Center</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="john@school.edu">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="membership">Membership Inquiry</option>
+                                <option value="events">Events & Programs</option>
+                                <option value="partnership">Partnership/Sponsorship</option>
+                                <option value="speaker">Speaker Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button btn-full">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">Connect With Us</h2>
+            <p class="text-center subtitle">Follow us on social media for updates and content</p>
+            
+            <div class="social-grid">
+                <a href="#" class="social-card social-instagram">
+                    <span class="social-icon">📸</span>
+                    <h3>Instagram</h3>
+                    <p>@schoolfinanceclub</p>
+                    <span class="social-action">Follow us →</span>
+                </a>
+                <a href="#" class="social-card social-linkedin">
+                    <span class="social-icon">💼</span>
+                    <h3>LinkedIn</h3>
+                    <p>School Finance Club</p>
+                    <span class="social-action">Connect →</span>
+                </a>
+                <a href="#" class="social-card social-discord">
+                    <span class="social-icon">💬</span>
+                    <h3>Discord</h3>
+                    <p>Join our community</p>
+                    <span class="social-action">Join server →</span>
+                </a>
+                <a href="#" class="social-card social-twitter">
+                    <span class="social-icon">🐦</span>
+                    <h3>Twitter</h3>
+                    <p>@finclub</p>
+                    <span class="social-action">Follow us →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I join the Finance Club?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Joining is easy! Simply attend one of our general meetings held every Wednesday at 4 PM, or fill out our contact form expressing your interest. Membership is open to all students regardless of major.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is there a membership fee?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We charge a small semester fee of $20 to cover event costs, food, and materials. This fee helps us host quality events and provide resources to all members.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need to be a finance major?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all! We welcome students from all majors. Many of our most active members come from diverse backgrounds including engineering, liberal arts, and sciences. Financial literacy benefits everyone!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I become an executive board member?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Elections for executive board positions are held each spring semester. To be eligible, you must have been an active member for at least one semester. Committee positions are available throughout the year.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>I'm a professional interested in speaking. How do I get involved?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We'd love to have you! Please use the contact form above and select "Speaker Inquiry" as the subject. Our events team will reach out to discuss opportunities for guest speaking, panel participation, or workshops.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">💰 Finance Club</span>
+                    <p>Empowering students with financial literacy.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#">📸 Instagram</a>
+                        <a href="#">💼 LinkedIn</a>
+                        <a href="#">💬 Discord</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Finance Club | Your School Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
