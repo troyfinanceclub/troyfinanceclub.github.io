@@ -1,5 +1,5 @@
 // ===================================================
-// FINANCE CLUB - MULTI-PAGE WEBSITE JAVASCRIPT
+// FINANCE CLUB - PROFESSIONAL WEBSITE JAVASCRIPT
 // ===================================================
 
 // ===== Mobile Menu Toggle =====
@@ -9,17 +9,20 @@ const navLinks = document.querySelector('.nav-links');
 if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        
-        // Animate hamburger to X
-        const spans = mobileMenuBtn.querySelectorAll('span');
-        spans.forEach(span => span.classList.toggle('active'));
     });
 
-    // Close mobile menu when clicking a link
+    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
         });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar')) {
+            navLinks.classList.remove('active');
+        }
     });
 }
 
@@ -28,35 +31,13 @@ const navbar = document.querySelector('.navbar');
 
 if (navbar) {
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        if (window.scrollY > 10) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 1)';
+            navbar.classList.remove('scrolled');
         }
     });
 }
-
-// ===== Scroll Reveal Animation =====
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-// Add fade-in class to sections
-document.querySelectorAll('.section').forEach(section => {
-    section.classList.add('fade-in');
-    observer.observe(section);
-});
 
 // ===== FAQ Accordion =====
 const faqItems = document.querySelectorAll('.faq-item');
@@ -66,14 +47,14 @@ faqItems.forEach(item => {
     
     if (question) {
         question.addEventListener('click', () => {
-            // Close other open items
+            // Close other items
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
                 }
             });
             
-            // Toggle current item
+            // Toggle current
             item.classList.toggle('active');
         });
     }
@@ -95,7 +76,10 @@ filterTabs.forEach(tab => {
         announcementCards.forEach(card => {
             if (filter === 'all' || card.dataset.category === filter) {
                 card.style.display = 'flex';
-                card.style.animation = 'fadeInUp 0.4s ease';
+                card.style.opacity = '0';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 50);
             } else {
                 card.style.display = 'none';
             }
@@ -114,37 +98,11 @@ if (contactForm) {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
         
-        // For GitHub Pages, you can integrate with:
-        // - Formspree (https://formspree.io)
-        // - EmailJS (https://emailjs.com)
-        // - Netlify Forms
-        
-        // For now, show a success message
-        alert('Thank you for your message! We\'ll get back to you soon.');
+        // Show success message
+        alert('Thank you for your message! We\'ll get back to you within 24 hours.');
         contactForm.reset();
         
-        // Example Formspree integration:
-        // Replace YOUR_FORM_ID with your Formspree form ID
-        /*
-        fetch('https://formspree.io/f/YOUR_FORM_ID', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Thank you for your message!');
-                contactForm.reset();
-            } else {
-                alert('Oops! Something went wrong.');
-            }
-        })
-        .catch(error => {
-            alert('Oops! Something went wrong.');
-        });
-        */
+        // For real implementation, integrate with Formspree, EmailJS, or Netlify Forms
     });
 }
 
@@ -157,22 +115,37 @@ if (newsletterForm) {
         
         const email = newsletterForm.querySelector('input[type="email"]').value;
         
-        // For actual implementation, integrate with:
-        // - Mailchimp
-        // - ConvertKit
-        // - ButtonDown
-        
         alert(`Thank you for subscribing! We'll send updates to ${email}`);
         newsletterForm.reset();
     });
 }
 
-// ===== Smooth Scroll for Anchor Links =====
+// ===== Scroll Reveal Animation =====
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Apply to sections
+document.querySelectorAll('.section').forEach(section => {
+    section.classList.add('fade-in');
+    observer.observe(section);
+});
+
+// ===== Smooth Scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         
-        // Only prevent default if it's an actual anchor link
         if (href !== '#') {
             e.preventDefault();
             const target = document.querySelector(href);
@@ -197,11 +170,11 @@ if (footerYear) {
     footerYear.innerHTML = footerYear.innerHTML.replace(/\d{4}/, year);
 }
 
-// ===== Add Loading Animation =====
-document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('loaded');
+// ===== Card Hover Effects =====
+document.querySelectorAll('.stat-card, .feature-card, .offering-card, .team-card, .social-card').forEach(card => {
+    card.style.transition = 'all 0.2s ease';
 });
 
 // ===== Console Message =====
-console.log('%c💰 Finance Club Website', 'font-size: 20px; font-weight: bold; color: #1a365d;');
-console.log('%cBuilt with ❤️ for financial literacy', 'font-size: 12px; color: #718096;');
+console.log('%c📈 Finance Club', 'font-size: 18px; font-weight: bold; color: #8B0000;');
+console.log('%cTroy High School', 'font-size: 12px; color: #666;');
