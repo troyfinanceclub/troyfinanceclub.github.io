@@ -64,22 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===== Contact Form Handler =====
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('.contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // If using Formspree, let it handle submission
-            // Otherwise, prevent default and show message
-            const action = contactForm.getAttribute('action');
-            
-            if (!action || action.includes('YOUR_FORM_ID')) {
-                e.preventDefault();
-                alert('Please configure your Formspree form ID in contact.html to enable form submissions.');
-            }
-        });
-    }
-});
+// Note: EmailJS form handling is in contact.html
 
 // ===== Smooth Scroll for Anchor Links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
